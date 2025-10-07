@@ -26,6 +26,11 @@
       ansible.builtin.debug:
         msg: "{{ out }}"
 
+    - name: Print fact
+      ansible.builtin.debug:
+        msg: "{{ ansible_architecture }}"
+
+
   roles:
     - sample
 
