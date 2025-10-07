@@ -17,6 +17,15 @@
       ansible.builtin.debug:
         #msg: Var URL - {{ URL }}
         msg: "{{ URL }}"
+
+    - name: Task output
+      ansible.builtin.shell: ls
+      register: out
+
+    - name: Print out
+      ansible.builtin.debug:
+        msg: "{{ out }}"
+
   roles:
     - sample
 
@@ -29,7 +38,8 @@
 # 3. Play level variable from file
 # 4. Play level Variable
 # 5. Role vars variable
-# 6. Role defaults variable
+# 6. Inventory variables
+# 7. Role defaults variable
 # Note: (Ansible will fail if the variable doesn't exist and you don't want to fail but however you want to proceed with some default value in any case the user did not provided then role defaults comes in to last place)
 
 # VAR: Value
