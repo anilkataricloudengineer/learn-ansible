@@ -9,7 +9,7 @@
         - apple
         - banana
         - orange
-        -
+
 #    - name: Print fruits with quantity
 #      ansible.builtin.debug:
 #        - msg: Fruit Name - {{ item.name }},Quantity - {{ item.quantity }}
