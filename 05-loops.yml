@@ -1,0 +1,13 @@
+- name: loops
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print fruits
+      ansible.builtin.debug:
+       - msg: Fruit Name - {{ item }}
+      loop:
+        - apple
+        - banana
+        - orange
+
+# Item is the default key word that ansible provides you are declaring a list of values you want to pick one value at a time and you want to iterate the task how do you do that is by using loop key word which are going to iterate and item is default variable comes up with
