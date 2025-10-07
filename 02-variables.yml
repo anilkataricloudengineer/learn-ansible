@@ -4,6 +4,8 @@
   vars:
     URL: play.google.com
     URL1: example.com
+  vars_files:
+    - just-vars.yml
   tasks:
     - name: Print a variable
       vars:
@@ -15,11 +17,18 @@
       ansible.builtin.debug:
         #msg: Var URL - {{ URL }}
         msg: "{{ URL }}"
-
-
+  roles:
+    - sample
 
 ## KEY: VAL, Line 12 no quotes needed
 # KEY: {{ VAR }}, then ansible expects it to be in double quotes, Line 17 quotes needed.
+
+# Variable Precedence - If same variable is declared in multiple places, which one will be picked by Ansible.
+# . Command line variable
+# . Task Variable
+# . Play level variable from file
+# . Play level Variable
+
 
 
 
